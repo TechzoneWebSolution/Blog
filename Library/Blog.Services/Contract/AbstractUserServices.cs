@@ -23,7 +23,7 @@ namespace Blog.Services.Contract
 
         //public abstract SuccessResult<AbstractUsers> Select(int id);
 
-        //public abstract SuccessResult<AbstractUsers> InsertUpdateUsers(AbstractUsers abstractusers);
+        public abstract SuccessResult<AbstractUser> InsertUpdateUsers(AbstractUser abstractusers);
 
         //public abstract SuccessResult<AbstractUsers> UsersChangePassword(AbstractUsers abstractusers);
 
@@ -38,7 +38,7 @@ namespace Blog.Services.Contract
         //public abstract PagedList<string> GetUsersDeviceToken();
 
         //public abstract SuccessResult<AbstractUsers> SelectChairman();
-        
+
         //public abstract PagedList<AbstractUsers> GetMembersByflatId(int flatid);
     }
 }

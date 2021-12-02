@@ -54,7 +54,41 @@ namespace Blog.Controllers
             }
             else
             {
-                ViewBag.openPopup = CommonHelper.ShowAlertMessageToastr(MessageType.danger.ToString(), Messages.InValidCredential);
+                ViewBag.openPopup = CommonHelper.ShowAlertMessageToastr(MessageType.danger.ToString(), userData.Message);
+            }
+            return View();
+        }
+
+        [HttpGet]
+        [ActionName(Actions.Register)]
+        public ActionResult Register()
+        {
+            if (TempData["openPopup"] != null)
+                ViewBag.openPopup = TempData["openPopup"];
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName(Actions.Register)]
+        public ActionResult Register(User objmodel)
+        {
+            objmodel.IsActive = true;
+            objmodel.UserType = 2;
+            SuccessResult<AbstractUser> userData = usersService.InsertUpdateUsers(objmodel);
+            if (userData != null && userData.Code == 200 && userData.Item != null)
+            {
+                Session.Clear();
+                ProjectSession.UserID = userData.Item.Id;
+                ProjectSession.UserName = userData.Item.FirstName + " " + userData.Item.LastName;
+                HttpCookie cookie = new HttpCookie("UserLogin");
+                cookie.Values.Add("Id", objmodel.Id.ToString());
+                cookie.Expires = DateTime.Now.AddHours(5);
+                Response.Cookies.Add(cookie);
+                return RedirectToAction(Actions.Index, Pages.Controllers.Dashboard, new { Area = "" });
+            }
+            else
+            {
+                ViewBag.openPopup = CommonHelper.ShowAlertMessageToastr(MessageType.danger.ToString(), userData.Message);
             }
             return View();
         }

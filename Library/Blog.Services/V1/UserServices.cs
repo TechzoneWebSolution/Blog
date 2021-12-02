@@ -56,11 +56,11 @@ namespace Blog.Services.V1
         //    return this.abstractUsersDao.Select(id);
         //}
 
-        //public override SuccessResult<AbstractUsers> InsertUpdateUsers(AbstractUsers abstractusers)
-        //{
-        //    SuccessResult<AbstractUsers> result = this.abstractUsersDao.InsertUpdateUsers(abstractusers);
-        //    return result;
-        //}
+        public override SuccessResult<AbstractUser> InsertUpdateUsers(AbstractUser abstractusers)
+        {
+            SuccessResult<AbstractUser> result = this.abstractUsersDao.InsertUpdateUsers(abstractusers);
+            return result;
+        }
 
         //public override SuccessResult<AbstractUsers> UsersChangePassword(AbstractUsers abstractusers)
         //{

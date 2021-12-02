@@ -702,6 +702,7 @@
     <Content Include="Views\ExamvsStandard\Index.cshtml" />
     <Content Include="Views\ExamvsStandard\Manage.cshtml" />
     <Content Include="Views\ExamQuestion\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Blog.APICommon\Blog.APICommon.csproj">

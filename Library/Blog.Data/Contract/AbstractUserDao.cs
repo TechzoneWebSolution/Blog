@@ -23,7 +23,7 @@ namespace Blog.Data.Contract
 
         //public abstract SuccessResult<AbstractUsers> Select(int id);
 
-        //public abstract SuccessResult<AbstractUsers> InsertUpdateUsers(AbstractUsers abstractusers);
+        public abstract SuccessResult<AbstractUser> InsertUpdateUsers(AbstractUser abstractuser);
 
         //public abstract SuccessResult<AbstractUsers> UsersChangePassword(AbstractUsers abstractusers);
 

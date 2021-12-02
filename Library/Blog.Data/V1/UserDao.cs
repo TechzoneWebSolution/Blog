@@ -135,37 +135,31 @@ namespace Blog.Data.V1
         //    return users;
         //}
 
-        //public override SuccessResult<AbstractUsers> InsertUpdateUsers(AbstractUsers abstractusers)
-        //{
-        //    SuccessResult<AbstractUsers> users = null;
-        //    var param = new DynamicParameters();
+        public override SuccessResult<AbstractUser> InsertUpdateUsers(AbstractUser abstractusers)
+        {
+            SuccessResult<AbstractUser> users = null;
+            var param = new DynamicParameters();
 
-        //    param.Add("@Id", abstractusers.Id, dbType: DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@ParentId", abstractusers.ParentId, dbType: DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@FirstName", abstractusers.FirstName, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@LastName", abstractusers.LastName, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@AvtarURL", abstractusers.AvtarURL, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@Email", abstractusers.Email, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@Password", abstractusers.Password, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@Phone", abstractusers.Phone, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@UserType", abstractusers.UserType, DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@Status", abstractusers.Status, DbType.Boolean, direction: ParameterDirection.Input);
-        //    param.Add("@CreatedBy", abstractusers.CreatedBy, dbType: DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@ModifiedBy", abstractusers.ModifiedBy, dbType: DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@Salt", abstractusers.Salt, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@Designation", abstractusers.Designation, DbType.String, direction: ParameterDirection.Input);
-        //    param.Add("@FlatId", abstractusers.FlatId, DbType.Int32, direction: ParameterDirection.Input);
-        //    param.Add("@MobileDeviceToken", abstractusers.MobileDeviceToken, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@Id", abstractusers.Id, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            param.Add("@FirstName", abstractusers.FirstName, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@LastName", abstractusers.LastName, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@Email", abstractusers.Email, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@Mobile", abstractusers.Mobile, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@Password", abstractusers.Password, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@Address", abstractusers.Address, DbType.String, direction: ParameterDirection.Input);
+            param.Add("@UserType", abstractusers.UserType, DbType.Int32, direction: ParameterDirection.Input);
+            param.Add("@CreatedBy", abstractusers.CreatedBy, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            param.Add("@ModifiedBy", abstractusers.ModifiedBy, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
-        //    using (SqlConnection con = new SqlConnection(Configurations.ConnectionString))
-        //    {
-        //        var task = con.QueryMultiple(SQLConfig.UsersUpsert, param, commandType: CommandType.StoredProcedure);
-        //        users = task.Read<SuccessResult<AbstractUsers>>().SingleOrDefault();
-        //        users.Item = task.Read<Users>().SingleOrDefault();
-        //    }
+            using (SqlConnection con = new SqlConnection(Configurations.ConnectionString))
+            {
+                var task = con.QueryMultiple(SQLConfig.UsersUpsert, param, commandType: CommandType.StoredProcedure);
+                users = task.Read<SuccessResult<AbstractUser>>().SingleOrDefault();
+                users.Item = task.Read<User>().SingleOrDefault();
+            }
 
-        //    return users;
-        //}
+            return users;
+        }
 
         //public override SuccessResult<AbstractUsers> UsersChangePassword(AbstractUsers abstractusers)
         //{

@@ -36,6 +36,7 @@ namespace Blog.Pages
         public const string ForgotPassword = "ForgotPassword";
         public const string Logout = "Logout";
         public const string PrivacyPolicy = "PrivacyPolicy";
+        public const string Register = "Register";
         #endregion
 
         #region Standard

@@ -23,7 +23,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Login | Mart</title>
+    <title>SignUp | Mart</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
@@ -54,42 +54,41 @@
     <!-- BEGIN LOGIN -->
     <div class="content">
         <!-- BEGIN LOGIN FORM -->
-        @using (Html.BeginForm(Actions.LogIn, Controllers.Account, new { Area = "" }, FormMethod.Post, new { id = "frmlogin", @class = "login-form" }))
+        @using (Html.BeginForm(Actions.Register, Controllers.Account, new { Area = "" }, FormMethod.Post, new { id = "frmlogin", @class = "login-form" }))
         {
             @Html.AntiForgeryToken()
-            <h3 class="form-title font-green">Sign In</h3>
+        <h3 class="form-title font-green">SignUp</h3>
             <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Username</label>
-                @Html.TextBoxFor(model => model.Email, new { @class = "form-control form-control-solid placeholder-no-fix", maxlength = 100, Value = userName, @placeholder = "Username" })
+                <label class="control-label visible-ie8 visible-ie9">First Name <span>*</span></label>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Please Enter First Name",autocomplete = "off" })
             </div>
             <div class="form-group">
-                <label class="control-label visible-ie8 visible-ie9">Password</label>
-                @Html.TextBoxFor(model => model.Password, new { @class = "form-control form-control-solid placeholder-no-fix", maxlength = 200, @placeholder = "Password", Value = password, @type = "Password" })
-            </div>
-            <div style="text-align:right;">
-                <a href="@Url.Action(Actions.Register, Controllers.Account)" >I don't have a account !!</a>
+                <label class="control-label visible-ie8 visible-ie9">Last Name <span>*</span></label>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Please Enter Last Name", autocomplete = "off" })
             </div>
             <div class="form-group">
-                <button type="submit" class="btn green uppercase">Login</button>
+                <label class="control-label visible-ie8 visible-ie9">Email <span>*</span></label>
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Please Enter Email", autocomplete = "off" })
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Mobile <span>*</span></label>
+                @Html.TextBoxFor(model => model.Mobile, new { @class = "form-control form-control-solid placeholder-no-fix", @onkeypress = "return isNumber(event)", @placeholder = "Please Enter Mobile", autocomplete = "off" })
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Password <span>*</span></label>
+                @Html.TextBoxFor(model => model.Password, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Please Enter Password", autocomplete = "off" })
+            </div>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Address <span>*</span></label>
+                @Html.TextAreaFor(model => model.Address, new { @class = "form-control form-control-solid placeholder-no-fix", @placeholder = "Please Enter Address", autocomplete = "off" })
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn green uppercase">SignUp</button>
                 @*<a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>*@
             </div>
         }
-        @using (Html.BeginForm(Actions.ForgotPassword, Controllers.Account, new { Area = "" }, FormMethod.Post, new { id = "forgotpwdform", @class = "forget-form" }))
-        {
-            @Html.AntiForgeryToken()
-            <h3 class="font-green">Forget Password ?</h3>
-            <p> Enter your e-mail address below to reset your password. </p>
-            <div class="form-group">
-                @Html.TextBoxFor(model => model.Email, new { @class = "form-control form-control-solid placeholder-no-fix", maxlength = 100, Value = userName, @placeholder = "Email" })
-            </div>
-            <div class="form-actions">
-                <button type="button" id="back-btn" class="btn green btn-outline">Back</button>
-                <button type="submit" class="btn btn-success uppercase pull-right">Submit</button>
-            </div>
-        }
-
     </div>
-    <div class="copyright"> @DateTime.Now.Year © Blog <a href="#">Privacy Policy</a> . All rights reserved.</div>
+    <div class="copyright"> @DateTime.Now.Year © Mart <a href="#">Privacy Policy</a> . All rights reserved.</div>
 
     <!-- PopUp -->
     @Html.Raw(ViewBag.openPopup)
@@ -112,17 +111,24 @@
             //Initialise Validation Variable
             Login.init();
             ForgotPassword.init();
-
+            function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
             //HideShow Form
-            $("#forget-password").click(function () {
-                $(".login-form").hide();
-                $(".forget-form").show();
-            });
+            //$("#forget-password").click(function () {
+            //    $(".login-form").hide();
+            //    $(".forget-form").show();
+            //});
 
-            $("#back-btn").click(function () {
-                $(".login-form").show();
-                $(".forget-form").hide();
-            });
+            //$("#back-btn").click(function () {
+            //    $(".login-form").show();
+            //    $(".forget-form").hide();
+            //});
 
         });
 
@@ -146,7 +152,18 @@
                     focusInvalid: false, // do not focus the last invalid input
                     rules: {
                         Email: {
-                            required: true
+                            required: true,
+                            email: true
+                        },
+                        FirstName: {
+                            required: true,
+                        },
+                        LastName: {
+                            required: true,
+                        }, Mobile: {
+                            required: true,
+                            minlength: 10,
+                            maxlength: 10,
                         },
                         Password: {
                             required: true
