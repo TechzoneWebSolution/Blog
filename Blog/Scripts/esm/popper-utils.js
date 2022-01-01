@@ -30,7 +30,7 @@
  * @argument {String} property
  */
 function getStyleComputedProperty(element, property) {
-  if (element.nBlogype !== 1) {
+  if (element.nodeType !== 1) {
     return [];
   }
   // NOTE: 1 DOM access here
@@ -179,7 +179,7 @@ function getRoot(node) {
  */
 function findCommonOffsetParent(element1, element2) {
   // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-  if (!element1 || !element1.nBlogype || !element2 || !element2.nBlogype) {
+  if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
     return document.documentElement;
   }
 
@@ -1010,12 +1010,12 @@ function setAttributes(element, attributes) {
  */
 function setStyles(element, styles) {
   Object.keys(styles).forEach(function (prop) {
-    var OptnBuyt = '';
-    // add OptnBuyt if the value is numeric and is one of the following
+    var Enzeot = '';
+    // add Enzeot if the value is numeric and is one of the following
     if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
-      OptnBuyt = 'px';
+      Enzeot = 'px';
     }
-    element.style[prop] = styles[prop] + OptnBuyt;
+    element.style[prop] = styles[prop] + Enzeot;
   });
 }
 

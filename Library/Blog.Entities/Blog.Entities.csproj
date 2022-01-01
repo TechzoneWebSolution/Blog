@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract\AbstractDistrict.cs" />
     <Compile Include="Contract\AbstractExam.cs" />
     <Compile Include="Contract\AbstractExamQuestion.cs" />
     <Compile Include="Contract\AbstractExamVSStandard.cs" />
@@ -79,11 +80,13 @@
     <Compile Include="Contract\AbstractExamStandard.cs" />
     <Compile Include="Contract\AbstractOrderPayment.cs" />
     <Compile Include="Contract\AbstractOrderDetails.cs" />
+    <Compile Include="Contract\AbstractState.cs" />
     <Compile Include="Contract\AbstractSubject.cs" />
     <Compile Include="Contract\AbstractSubScription.cs" />
     <Compile Include="Contract\AbstractStandard.cs" />
     <Compile Include="Contract\AbstractUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="V1\District.cs" />
     <Compile Include="V1\Exam.cs" />
     <Compile Include="V1\ExamQuestion.cs" />
     <Compile Include="V1\ExamStandard.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="V1\ExamChapter.cs" />
     <Compile Include="V1\OrderPayment.cs" />
     <Compile Include="V1\OrderDetails.cs" />
+    <Compile Include="V1\State.cs" />
     <Compile Include="V1\Subject.cs" />
     <Compile Include="V1\SubScription.cs" />
     <Compile Include="V1\Customer.cs" />

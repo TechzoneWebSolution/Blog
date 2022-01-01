@@ -36,7 +36,7 @@
  * @argument {String} property
  */
 function getStyleComputedProperty(element, property) {
-  if (element.nBlogype !== 1) {
+  if (element.nodeType !== 1) {
     return [];
   }
   // NOTE: 1 DOM access here
@@ -185,7 +185,7 @@ function getRoot(node) {
  */
 function findCommonOffsetParent(element1, element2) {
   // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-  if (!element1 || !element1.nBlogype || !element2 || !element2.nBlogype) {
+  if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
     return document.documentElement;
   }
 

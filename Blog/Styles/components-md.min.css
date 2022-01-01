@@ -1605,7 +1605,7 @@ code {
             display: block
         }
 
-    .m-grid.m-grid-Blog .m-grid-col {
+    .m-grid.m-grid-demo .m-grid-col {
         border: 1px solid #ddd;
         background: #fafafa;
         height: 100px
@@ -2315,7 +2315,7 @@ li [class*=" icon-"], li [class^=icon-] {
     background-image: none
 }
 
-.simplelineicons-Blog .item-box {
+.simplelineicons-demo .item-box {
     display: inline-block;
     font-size: 16px;
     margin: 0 -.22em 1em 0;
@@ -2323,7 +2323,7 @@ li [class*=" icon-"], li [class^=icon-] {
     width: 100%
 }
 
-    .simplelineicons-Blog .item-box .item {
+    .simplelineicons-demo .item-box .item {
         background-color: #fff;
         color: #33383e;
         border-radius: 8px;
@@ -2332,7 +2332,7 @@ li [class*=" icon-"], li [class^=icon-] {
         width: 100%
     }
 
-.bs-glyphicons, .glyphicons-Blog ul {
+.bs-glyphicons, .glyphicons-demo ul {
     padding-left: 0;
     padding-bottom: 1px;
     margin-bottom: 20px;
@@ -2340,12 +2340,12 @@ li [class*=" icon-"], li [class^=icon-] {
     list-style: none
 }
 
-.simplelineicons-Blog .item-box .item span {
+.simplelineicons-demo .item-box .item span {
     font-size: 22px
 }
 
 @media only screen and (min-width:768px) {
-    .simplelineicons-Blog .item-box {
+    .simplelineicons-demo .item-box {
         width: 33.333%
     }
 }
@@ -2354,7 +2354,7 @@ li [class*=" icon-"], li [class^=icon-] {
     text-align: center
 }
 
-.glyphicons-Blog ul li {
+.glyphicons-demo ul li {
     float: left;
     width: 25%;
     height: 115px;
@@ -2366,19 +2366,19 @@ li [class*=" icon-"], li [class^=icon-] {
     border: 1px solid #ddd
 }
 
-.glyphicons-Blog .glyphicon {
+.glyphicons-demo .glyphicon {
     display: block;
     margin: 5px auto 10px;
     font-size: 24px;
     color: #444
 }
 
-.glyphicons-Blog ul li:hover {
+.glyphicons-demo ul li:hover {
     background-color: rgba(86,61,124,.1)
 }
 
 @media (min-width:768px) {
-    .glyphicons-Blog ul li {
+    .glyphicons-demo ul li {
         width: 12.5%
     }
 }
@@ -26983,19 +26983,19 @@ body.stop-scrolling {
     color: #fff !important
 }
 
-.color-Blog {
+.color-demo {
     border: 1px solid #eee;
     margin: 0 0 20px;
     cursor: pointer
 }
 
-    .color-Blog .color-view {
+    .color-demo .color-view {
         padding: 35px 10px;
         text-align: center;
         font-size: 18px
     }
 
-    .color-Blog .color-info {
+    .color-demo .color-info {
         border-top: 1px solid #eee;
         padding: 10px;
         text-align: center

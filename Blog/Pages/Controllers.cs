@@ -21,6 +21,7 @@ namespace Blog.Pages
         public const string ExamVSStandard = "ExamVSStandard";
         public const string ExamStandard = "ExamStandard";
         public const string ExamQuestion = "ExamQuestion";
-        
+        public const string State = "State";
+        public const string District = "District";
     }
 }

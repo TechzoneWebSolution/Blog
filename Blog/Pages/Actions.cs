@@ -85,5 +85,17 @@ namespace Blog.Pages
         public const string Search1 = "Search1";
         public const string Search2 = "Search2";
         #endregion
+
+        #region State
+        public const string BindState = "BindState";
+        public const string AddEditState = "AddEditState";
+        public const string DeleteState = "DeleteState";
+        #endregion
+
+        #region District
+        public const string BindDistrict = "BindDistrict";
+        public const string AddEditDistrict = "AddEditDistrict";
+        public const string DeleteDistrict = "DeleteDistrict";
+        #endregion
     }
 }

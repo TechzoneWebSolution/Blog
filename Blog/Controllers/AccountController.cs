@@ -46,6 +46,7 @@ namespace Blog.Controllers
                 Session.Clear();
                 ProjectSession.UserID = userData.Item.Id;
                 ProjectSession.UserName = userData.Item.FirstName + " " + userData.Item.LastName;
+                ProjectSession.UserType = userData.Item.UserType;
                 HttpCookie cookie = new HttpCookie("UserLogin");
                 cookie.Values.Add("Id", objmodel.Id.ToString());
                 cookie.Expires = DateTime.Now.AddHours(5);

@@ -182,7 +182,7 @@
       return Boolean(TRANSITION_END);
     },
     isElement: function isElement(obj) {
-      return (obj[0] || obj).nBlogype;
+      return (obj[0] || obj).nodeType;
     },
     typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
       for (var property in configTypes) {
@@ -1596,7 +1596,7 @@
    * @argument {String} property
    */
   function getStyleComputedProperty(element, property) {
-    if (element.nBlogype !== 1) {
+    if (element.nodeType !== 1) {
       return [];
     }
     // NOTE: 1 DOM access here
@@ -1744,7 +1744,7 @@
    */
   function findCommonOffsetParent(element1, element2) {
     // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-    if (!element1 || !element1.nBlogype || !element2 || !element2.nBlogype) {
+    if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
       return document.documentElement;
     }
 
@@ -4776,10 +4776,10 @@
       if (transition) {
         var transitionDuration = Util.getTransitionDurationFromElement(this._element);
         $(this._element).one(Util.TRANSITION_END, function (event) {
-          return _this2._hiBlogdal(event);
+          return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
       } else {
-        this._hiBlogdal();
+        this._hideModal();
       }
     };
 
@@ -4822,7 +4822,7 @@
 
       var transition = $(this._element).hasClass(ClassName$5.FADE);
 
-      if (!this._element.parentNode || this._element.parentNode.nBlogype !== Node.ELEMENT_NODE) {
+      if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
         document.body.appendChild(this._element);
       }
@@ -4909,7 +4909,7 @@
       }
     };
 
-    _proto._hiBlogdal = function _hiBlogdal() {
+    _proto._hideModal = function _hideModal() {
       var _this7 = this;
 
       this._element.style.display = 'none';
@@ -5679,7 +5679,7 @@
     };
 
     _proto.setElementContent = function setElementContent($element, content) {
-      if (typeof content === 'object' && (content.nBlogype || content.jquery)) {
+      if (typeof content === 'object' && (content.nodeType || content.jquery)) {
         // Content is a DOM node or a jQuery
         if (this.config.html) {
           if (!$(content).parent().is($element)) {
@@ -6576,7 +6576,7 @@
     _proto.show = function show() {
       var _this = this;
 
-      if (this._element.parentNode && this._element.parentNode.nBlogype === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName$9.ACTIVE) || $(this._element).hasClass(ClassName$9.DISABLED)) {
+      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName$9.ACTIVE) || $(this._element).hasClass(ClassName$9.DISABLED)) {
         return;
       }
 

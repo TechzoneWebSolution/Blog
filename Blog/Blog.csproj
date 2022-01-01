@@ -212,12 +212,14 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\DistrictController.cs" />
     <Compile Include="Controllers\ExamQuestionController.cs" />
     <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\ExamvsStandardController.cs" />
     <Compile Include="Controllers\ExamSubjectController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ExamChapterController.cs" />
+    <Compile Include="Controllers\StateController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\StandardController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -703,6 +705,10 @@
     <Content Include="Views\ExamvsStandard\Manage.cshtml" />
     <Content Include="Views\ExamQuestion\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\District\Index.cshtml" />
+    <Content Include="Views\District\Manage.cshtml" />
+    <Content Include="Views\State\Index.cshtml" />
+    <Content Include="Views\State\Manage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\Blog.APICommon\Blog.APICommon.csproj">

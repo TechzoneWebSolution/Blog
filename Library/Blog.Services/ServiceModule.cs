@@ -39,6 +39,8 @@ namespace Blog.Services
             builder.RegisterType<V1.ExamVSStandardServices>().As<AbstractExamVSStandardServices>().InstancePerDependency();
             builder.RegisterType<V1.ExamQuestionServices>().As<AbstractExamQuestionServices>().InstancePerDependency();
             builder.RegisterType<V1.ExamStandardServices>().As<AbstractExamStandardServices>().InstancePerDependency();
+            builder.RegisterType<V1.StateServices>().As<AbstractStateServices>().InstancePerDependency();
+            builder.RegisterType<V1.DistrictServices>().As<AbstractDistrictServices>().InstancePerDependency();
           
             base.Load(builder);
         }

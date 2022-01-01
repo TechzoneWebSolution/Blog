@@ -36,6 +36,9 @@ namespace Blog.Data
             builder.RegisterType<V1.ExamVSStandardDao>().As<AbstractExamVSStandardDao>().InstancePerDependency();
             builder.RegisterType<V1.ExamQuestionDao>().As<AbstractExamQuestionDao>().InstancePerDependency();
             builder.RegisterType<V1.ExamStandardDao>().As<AbstractExamStandardDao>().InstancePerDependency();
+            builder.RegisterType<V1.StandardDao>().As<AbstractStandardDao>().InstancePerDependency();
+            builder.RegisterType<V1.StateDao>().As<AbstractStateDao>().InstancePerDependency();
+            builder.RegisterType<V1.DistrictDao>().As<AbstractDistrictDao>().InstancePerDependency();
             base.Load(builder);
         }
     }

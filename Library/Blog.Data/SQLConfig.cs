@@ -78,5 +78,21 @@ namespace Blog.Data
         public const string StandardByIdByDateForOtherPDFMeterial = "dbo.StandardByIdByDateForOtherPDFMeterial";
         public const string QuestionDelete = "dbo.QuestionDelete";
 
+        #region State
+        public const string StateSelectAllForDropdown = "dbo.StateSelectAllForDropdown";
+        public const string StateSelectAll = "dbo.StateSelectAll";
+        public const string StateById = "dbo.StateById";
+        public const string StateUpsert = "dbo.StateUpsert";
+        public const string StateDelete = "dbo.StateDelete";
+        #endregion
+
+        #region District
+        public const string DistrictSelectAllForDropdown = "dbo.DistrictSelectAllForDropdown";
+        public const string DistrictSelectAllByStateId = "dbo.DistrictSelectAllByStateId";
+        public const string DistrictById = "dbo.DistrictById";
+        public const string DistrictUpsert = "dbo.DistrictUpsert";
+        public const string DistrictDelete = "dbo.DistrictDelete";
+        #endregion
+
     }
 }

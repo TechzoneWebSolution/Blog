@@ -93,7 +93,7 @@ namespace Blog
             //BEGIN THEME LAYOUT SCRIPTS
             bundles.Add(new GZipScriptBundle("~/bundles/layoutscripts", new JsMinify()).Include(
                         "~/Scripts/layout.min.js",
-                        "~/Scripts/Blog.min.js",
+                        "~/Scripts/demo.min.js",
                         "~/Scripts/quick-sidebar.min.js",
                         "~/Scripts/quick-nav.min.js"));
             //END THEME LAYOUT SCRIPTS
@@ -125,7 +125,8 @@ namespace Blog
                         "~/Scripts/datatable.js",
                         "~/Scripts/datatables.min.js",
                         "~/Scripts/datatables.bootstrap.js",
-                        "~/Scripts/select2.full.min.js"));
+                        "~/Scripts/select2.full.min.js",
+                          "~/Scripts/bootstrap-multiselect.js"));
 
             bundles.Add(new GZipStyleBundle("~/Styles/pluginsstyles", new CssMinify()).Include(
                       "~/Styles/toastr.min.css",
@@ -134,7 +135,8 @@ namespace Blog
                       "~/Styles/select2.min.css",
                       "~/Styles/select2-bootstrap.min.css",
                       "~/Styles/bootstrap-datetimepicker.min.css",
-                      "~/Styles/bootstrap-datepicker3.min.css"));
+                      "~/Styles/bootstrap-datepicker3.min.css",
+                       "~/Styles/bootstrap-multiselect.css"));
             //END PAGE LEVEL PLUGINS
 
             //BEGIN PAGE LEVEL SCRIPTS
@@ -142,11 +144,12 @@ namespace Blog
                         "~/Scripts/ui-modals.min.js",
                         "~/Scripts/table-datatables-buttons.min.js",
                         "~/Scripts/components-bootstrap-switch.min",
-                        "~/Scripts/components-select2.min.js",
+                         //"~/Scripts/components-select2.min.js",
                          "~/Scripts/moment.min.js",
                         "~/Scripts/moment-with-locales.min.js",
                         "~/Scripts/bootstrap-datetimepicker.min.js",
-                        "~/Scripts/bootstrap-datepicker.min.js"));
+                        "~/Scripts/bootstrap-datepicker.min.js",
+                        "~/Scripts/components-bootstrap-multiselect.min.js"));
             //END PAGE LEVEL SCRIPTS
 
             //JQ VALIDATION

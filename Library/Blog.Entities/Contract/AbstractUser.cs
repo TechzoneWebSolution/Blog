@@ -24,5 +24,11 @@ namespace Blog.Entities.Contract
         public string CreatedDate { get; set; }
         public int ModifiedBy { get; set; }
         public string ModifiedDate { get; set; }
+        public int StateId { get; set; }
+        public int DistrictId { get; set; }
+        public int TalukaId { get; set; }
+        public string StateName { get; set; }
+        public string DistrictName { get; set; }
+        public string TalukaName { get; set; }
     }
 }

@@ -17,7 +17,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Preview page of Metronic Admin Theme #1 for blank page layout" name="description" />
     <meta content="" name="author" />
-
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
     @Styles.Render("~/Styles/globalstyles")
@@ -32,6 +31,7 @@
     @Styles.Render("~/Styles/layoutstyles")
     <!-- END THEME LAYOUT STYLES -->
     <!-- BEGIN CORE PLUGINS -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     @Scripts.Render("~/bundles/corepulgins")
     <!-- END CORE PLUGINS -->
     @*<script src="~/Scripts/ckeditor/ckeditor.js"></script>*@
@@ -180,28 +180,22 @@
                 </a>
                 <ul class="topmenuul">
                     <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.Dashboard, new { area = "" })" id="lnkMenuDashboard">Dashboard</a></li>
-                    <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.Customers, new { area = "" })" id="lnkMenuCustomers">Customers</a></li>
-                    <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.SubScription, new { area = "" })" id="lnkMenuSubScription">SubScription</a></li>
-                    <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.Standard, new { area = "" })" id="lnkMenuStandard">Standard</a></li>
-                    @*<li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.Exam, new { area = "" })" id="lnkMenuExam">Exam</a></li>
-        <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.ExamSubject, new { area = "" })" id="lnkMenuSubject">Subject</a></li>
-        <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.ExamChapter, new { area = "" })" id="lnkMenuChapter">Chapter</a></li>
-        <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.ExamQuestion, new { area = "" })" id="lnkMenuExamQuestion">Question</a></li>
-        <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.ExamVSStandard, new { area = "" })" id="lnkMenuExamVSStandard">Exam Standard</a></li>*@
-
-                    <li class="topmenuli">
-                        <a data-toggle="dropdown">
-                            Exam
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-right" style="width:20%;position:inherit;">
-                            <li><a href="@Url.Action(Actions.Index, Controllers.Exam, new { area = "" })">Exam</a></li>
-                            <li><a href="@Url.Action(Actions.Index, Controllers.ExamSubject, new { area = "" })">Subject</a></li>
-                            <li><a href="@Url.Action(Actions.Index, Controllers.ExamChapter, new { area = "" })">Chapter</a></li>
-                            <li><a href="@Url.Action(Actions.Index, Controllers.ExamQuestion, new { area = "" })">Question</a></li>
-                            <li><a href="@Url.Action(Actions.Index, Controllers.ExamVSStandard, new { area = "" })">Exam Standard</a></li>
-                        </ul>
-                    </li>
+                    <li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.State, new { area = "" })" id="lnkMenuState">State</a></li>
+                    @*<li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.District, new { area = "" })" id="lnkMenuDistrict">Vegitables</a></li>*@
+                    @*<li class="topmenuli"><a href="@Url.Action(Actions.Index, Controllers.Standard, new { area = "" })" id="lnkMenuStandard">Standard</a></li>*@
+                    @*<li class="topmenuli">
+                            <a data-toggle="dropdown">
+                                Exam
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-right" style="width:20%;position:inherit;">
+                                <li><a href="@Url.Action(Actions.Index, Controllers.Exam, new { area = "" })">Exam</a></li>
+                                <li><a href="@Url.Action(Actions.Index, Controllers.ExamSubject, new { area = "" })">Subject</a></li>
+                                <li><a href="@Url.Action(Actions.Index, Controllers.ExamChapter, new { area = "" })">Chapter</a></li>
+                                <li><a href="@Url.Action(Actions.Index, Controllers.ExamQuestion, new { area = "" })">Question</a></li>
+                                <li><a href="@Url.Action(Actions.Index, Controllers.ExamVSStandard, new { area = "" })">Exam Standard</a></li>
+                            </ul>
+                        </li>*@
                     <li class="topmenuli"><a href="@Url.Action(Actions.Logout, Controllers.Account, new { area = "" })" id="Logoot">Log Out</a></li>
                 </ul>
                 <div class="top-menu">
@@ -240,6 +234,7 @@
         <!-- END FOOTER -->
     </div>
     <div class="quick-nav-overlay"></div>
+
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     @Scripts.Render("~/bundles/pluginsscripts")
     <!-- END PAGE LEVEL PLUGINS -->
@@ -282,10 +277,13 @@
                 case '@Controllers.Users':
                     setActiveLink($('#lnkMenuUsers').attr('id'));
                     break;
-                case '@Controllers.Customers':
-                    setActiveLink($('#lnkMenuCustomers').attr('id'));
+                case '@Controllers.State':
+                    setActiveLink($('#lnkMenuState').attr('id'));
                     break;
-                case '@Controllers.SubScription':
+                case '@Controllers.District':
+                    setActiveLink($('#lnkMenuState').attr('id'));
+                    break;
+                @*case '@Controllers.SubScription':
                     setActiveLink($('#lnkMenuSubScription').attr('id'));
                     break;
                  case '@Controllers.Standard':
@@ -311,7 +309,7 @@
                     break;
                 case '@Controllers.ExamQuestion':
                     setActiveLink($('#lnkMenuExamQuestion').attr('id'));
-                    break;
+                    break;*@
             }
         }
 

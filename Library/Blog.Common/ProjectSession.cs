@@ -345,6 +345,32 @@ namespace Blog.Common
                 HttpContext.Current.Session["UserID"] = value;
             }
         }
+        
+        /// <summary>
+        /// Gets or sets the user identifier.
+        /// </summary>
+        /// <value>The user identifier.</value>
+        public static int UserType
+        {
+            // UserType - 1 = Admin
+            // UserType - 2 = Customers
+            get
+            {
+                if (HttpContext.Current.Session["UserType"] == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return ConvertTo.Integer(HttpContext.Current.Session["UserType"]);
+                }
+            }
+
+            set
+            {
+                HttpContext.Current.Session["UserType"] = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the name of the user.
